@@ -1,0 +1,6 @@
+{
+  "name": "Ibrahim Dada Group",
+  "description": "The official portfolio of the Ibrahim Dada Group, a multi-generation conglomerate spanning textiles, optics, real estate, and philanthropy.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

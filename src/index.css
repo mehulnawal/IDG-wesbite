@@ -1,0 +1,343 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", ui-serif, Georgia, serif;
+  
+  --color-cream: #F3EDE0;
+  --color-cream-deep: #E8DFD0;
+  --color-olive: #4A5240;
+  --color-olive-light: #6B7560;
+  --color-gold: #B8942A;
+  --color-gold-light: #D4AF5A;
+  --color-charcoal: #1A1A18;
+  --color-charcoal-mid: #2E2E2A;
+  --color-text-dark: #1C1A14;
+  --color-text-muted: #6B6455;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+:root {
+  --cream: #F3EDE0;
+  --cream-deep: #E8DFD0;
+  --olive: #4A5240;
+  --olive-light: #6B7560;
+  --gold: #B8942A;
+  --gold-light: #D4AF5A;
+  --charcoal: #1A1A18;
+  --charcoal-mid: #2E2E2A;
+  --text-dark: #1C1A14;
+  --text-muted: #6B6455;
+  --white: #FFFFFF;
+}
+
+body {
+  background-color: var(--cream);
+  color: var(--text-dark);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  cursor: none; /* Hide default cursor for custom cursor */
+}
+
+/* Noise grain overlay */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("https://grains.y78.cloud/grain.png");
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+@media (pointer: coarse) {
+  body {
+    cursor: auto;
+  }
+}
+
+.cormorant {
+  font-family: var(--font-serif);
+}
+
+.dm-sans {
+  font-family: var(--font-sans);
+}
+
+/* Custom Utilities */
+/* .section-padding {
+  padding-top: clamp(80px, 10vw, 140px);
+  padding-bottom: clamp(80px, 10vw, 140px);
+} */
+
+.container-custom {
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+@media (min-width: 1024px) {
+  .container-custom {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+}
+
+/* Locomotive Scroll styles */
+html.has-scroll-smooth {
+  overflow: hidden;
+}
+
+html.has-scroll-dragging {
+  user-select: none;
+}
+
+.has-scroll-smooth body {
+  overflow: hidden;
+}
+
+.has-scroll-smooth [data-scroll-container] {
+  min-height: 100vh;
+}
+
+/* Custom Cursor */
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--gold);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 10000;
+  transform: translate(-50%, -50%);
+}
+
+.cursor-ring {
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  opacity: 0.5;
+  transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease;
+}
+
+/* Animation classes */
+.clip-path-reveal {
+  clip-path: inset(100% 0 0 0);
+}
+
+@keyframes kenBurns {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.08); }
+}
+
+.ken-burns {
+  animation: kenBurns 25s ease-in-out infinite alternate;
+}
+
+@keyframes scrollPulse {
+  0% { transform: translateY(0); opacity: 0; }
+  50% { transform: translateY(10px); opacity: 1; }
+  100% { transform: translateY(20px); opacity: 0; }
+}
+
+.scroll-pulse {
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.blink {
+  animation: blink 1s step-end infinite;
+}
+
+/* Hide scrollbar but keep functionality */
+::-webkit-scrollbar {
+  display: none;
+}
+-ms-overflow-style: none;
+scrollbar-width: none;
+
+@theme {
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", ui-serif, Georgia, serif;
+  
+  --color-cream: #F3EDE0;
+  --color-cream-deep: #E8DFD0;
+  --color-olive: #4A5240;
+  --color-olive-light: #6B7560;
+  --color-gold: #B8942A;
+  --color-gold-light: #D4AF5A;
+  --color-charcoal: #1A1A18;
+  --color-charcoal-mid: #2E2E2A;
+  --color-text-dark: #1C1A14;
+  --color-text-muted: #6B6455;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+:root {
+  --cream: #F3EDE0;
+  --cream-deep: #E8DFD0;
+  --olive: #4A5240;
+  --olive-light: #6B7560;
+  --gold: #B8942A;
+  --gold-light: #D4AF5A;
+  --charcoal: #1A1A18;
+  --charcoal-mid: #2E2E2A;
+  --text-dark: #1C1A14;
+  --text-muted: #6B6455;
+  --white: #FFFFFF;
+}
+
+body {
+  background-color: var(--cream);
+  color: var(--text-dark);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  cursor: none; /* Hide default cursor for custom cursor */
+}
+
+/* Noise grain overlay */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("https://grains.y78.cloud/grain.png");
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+@media (pointer: coarse) {
+  body {
+    cursor: auto;
+  }
+}
+
+.cormorant {
+  font-family: var(--font-serif);
+}
+
+.dm-sans {
+  font-family: var(--font-sans);
+}
+
+/* Custom Utilities */
+.section-padding {
+  padding-top: clamp(80px, 10vw, 140px);
+  /* padding-bottom: clamp(80px, 10vw, 140px); */
+}
+
+.container-custom {
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+@media (min-width: 1024px) {
+  .container-custom {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+}
+
+/* Locomotive Scroll styles */
+html.has-scroll-smooth {
+  overflow: hidden;
+}
+
+html.has-scroll-dragging {
+  user-select: none;
+}
+
+.has-scroll-smooth body {
+  overflow: hidden;
+}
+
+.has-scroll-smooth [data-scroll-container] {
+  min-height: 100vh;
+}
+
+/* Custom Cursor */
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--gold);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 10000;
+  transform: translate(-50%, -50%);
+}
+
+.cursor-ring {
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  opacity: 0.5;
+  transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease;
+}
+
+/* Animation classes */
+.clip-path-reveal {
+  clip-path: inset(100% 0 0 0);
+}
+
+@keyframes kenBurns {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.08); }
+}
+
+.ken-burns {
+  animation: kenBurns 25s ease-in-out infinite alternate;
+}
+
+@keyframes scrollPulse {
+  0% { transform: translateY(0); opacity: 0; }
+  50% { transform: translateY(10px); opacity: 1; }
+  100% { transform: translateY(20px); opacity: 0; }
+}
+
+.scroll-pulse {
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.blink {
+  animation: blink 1s step-end infinite;
+}
+
+/* Hide scrollbar but keep functionality */
+::-webkit-scrollbar {
+  display: none;
+}
+-ms-overflow-style: none;
+scrollbar-width: none;
