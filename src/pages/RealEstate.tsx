@@ -12,7 +12,6 @@ export default function RealEstate() {
   ];
 
   useEffect(() => {
-    // 3D Parallax effect
     gsap.to('.parallax-bg', {
       y: -100,
       scrollTrigger: {
@@ -23,14 +22,12 @@ export default function RealEstate() {
       }
     });
 
-    // Content reveal
     gsap.to('.project-preview-img', {
       clipPath: 'inset(0% 0 0 0)',
       duration: 0.5,
       ease: 'power3.out',
       overwrite: true
     });
-
   }, [activeProject]);
 
   return (
@@ -50,7 +47,6 @@ export default function RealEstate() {
           <div className="absolute right-0 top-0 pointer-events-none opacity-[0.03] text-[220px] cormorant text-white uppercase parallax-bg leading-none hidden lg:block">
             REAL ESTATE
           </div>
-
           <div>
             <span className="dm-sans text-[10px] text-gold-light tracking-[0.25em] uppercase block mb-6">Business Venture · 03</span>
             <h1 className="cormorant text-[clamp(60px,10vw,140px)] text-white font-light leading-[0.9] mb-8">
@@ -80,12 +76,11 @@ export default function RealEstate() {
         </div>
       </section>
 
-      {/* PROJECT LIST EDITORIAL */}
-      <section className="py-4 container-custom">
+      {/* PROJECT LIST */}
+      <section className="section-padding container-custom">
         <div className="flex flex-col lg:flex-row gap-20">
           <div className="lg:w-1/2 flex flex-col">
-            <h2 className="cormorant text-5xl text-text-dark mb-2">Selected Portfolio</h2>
-
+            <h2 className="cormorant text-5xl text-text-dark mb-16">Selected Portfolio</h2>
             <div className="flex flex-col">
               {projects.map((project, i) => (
                 <div
@@ -102,7 +97,7 @@ export default function RealEstate() {
                     </div>
                     <span className="dm-sans text-xs text-text-muted tracking-wide mr-4">{project.loc}</span>
                   </div>
-                  {/* Mobile Mobile Only Image */}
+                  {/* Mobile Only Image */}
                   <div className="block lg:hidden mt-4 overflow-hidden">
                     <img src={project.img} alt={project.name} className="w-full aspect-video object-cover" />
                   </div>
@@ -130,7 +125,6 @@ export default function RealEstate() {
           <h2 className="cormorant italic text-white text-[clamp(40px,6vw,80px)] font-light leading-tight mb-20 px-4">
             "Built on Precision. Delivered with Pride."
           </h2>
-
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-24 text-left">
             {[
               { title: "Superior Construction", desc: "Utilizing top-grade materials and structural engineering that exceeds safety benchmarks." },
