@@ -32,7 +32,7 @@ export default function RealEstate() {
 
   return (
     <div className="bg-cream">
-      {/* HERO */}
+
       <section className="real-estate-hero relative h-screen flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img
@@ -59,7 +59,6 @@ export default function RealEstate() {
         </div>
       </section>
 
-      {/* STATS */}
       <section className="bg-olive py-20">
         <div className="container-custom grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-24 text-center">
           {[
@@ -76,7 +75,6 @@ export default function RealEstate() {
         </div>
       </section>
 
-      {/* PROJECT LIST */}
       <section className="section-padding container-custom">
         <div className="flex flex-col lg:flex-row gap-20">
           <div className="lg:w-1/2 flex flex-col">
@@ -97,7 +95,7 @@ export default function RealEstate() {
                     </div>
                     <span className="dm-sans text-xs text-text-muted tracking-wide mr-4">{project.loc}</span>
                   </div>
-                  {/* Mobile Only Image */}
+
                   <div className="block lg:hidden mt-4 overflow-hidden">
                     <img src={project.img} alt={project.name} className="w-full aspect-video object-cover" />
                   </div>
@@ -119,7 +117,6 @@ export default function RealEstate() {
         </div>
       </section>
 
-      {/* COMMITMENT */}
       <section className="section-padding bg-charcoal text-center">
         <div className="container-custom">
           <h2 className="cormorant italic text-white text-[clamp(40px,6vw,80px)] font-light leading-tight mb-20 px-4">

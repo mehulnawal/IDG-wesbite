@@ -60,10 +60,10 @@ export default function Optical() {
                 <span className="cormorant text-4xl text-olive">Est. 2014</span>
                 <span className="dm-sans text-[10px] uppercase tracking-widest text-text-muted">Launch</span>
               </div>
-              <div className="flex flex-col">
+              {/* <div className="flex flex-col">
                 <span className="cormorant text-4xl text-olive font-light italic">Schneider™</span>
                 <span className="dm-sans text-[10px] uppercase tracking-widest text-text-muted">German Precision</span>
-              </div>
+              </div> */}
             </div>
           </div>
 

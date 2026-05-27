@@ -141,7 +141,7 @@ export default function Textile() {
         </div>
       </section>
 
-      {/* VALUE CHAIN */}
+      {/* Marquee */}
       <section className="value-chain-section bg-charcoal min-h-screen overflow-hidden hidden lg:block">
         <div className="value-chain-track flex h-screen items-center">
 
