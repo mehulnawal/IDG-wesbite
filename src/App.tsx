@@ -26,9 +26,9 @@ export default function App() {
       {!loading && (
         <>
           <ScrollProgress />
-          <CustomCursor />
+          {/* <CustomCursor /> */}
           <Navbar />
-          
+
           <AnimatePresence mode="wait">
             <Routes location={location} key={location.pathname}>
               <Route path="/" element={<PageWrapper><Home /></PageWrapper>} />
@@ -50,8 +50,9 @@ export default function App() {
 const PageWrapper = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="relative">
+
       {/* Enter/Exit Curtain */}
-      <motion.div
+      {/* <motion.div
         initial={{ y: '100%' }}
         animate={{ y: '-100%' }}
         exit={{ y: '0%' }}
@@ -59,13 +60,13 @@ const PageWrapper = ({ children }: { children: React.ReactNode }) => {
         className="fixed inset-0 z-[5000] bg-olive flex items-center justify-center pointer-events-none"
       >
         <span className="text-4xl text-cream cormorant font-medium">IDG</span>
-      </motion.div>
+      </motion.div> */}
 
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 0.5 }}
+      // initial={{ opacity: 0 }}
+      // animate={{ opacity: 1 }}
+      // exit={{ opacity: 0 }}
+      // transition={{ duration: 0.5 }}
       >
         {children}
       </motion.div>
